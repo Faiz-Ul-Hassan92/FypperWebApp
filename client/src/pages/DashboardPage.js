@@ -219,8 +219,8 @@ const StudentDashboard = ({ user, projects }) => {
 
             {/* Rest of the existing dashboard content */}
             <h3>Your Projects</h3>
-            {projects.length > 0 ? (
-                projects.map(p => (
+            {memberProjects.length > 0 ? (
+                memberProjects.map(p => (
                     <div key={p._id} className="card">
                         <Link to={`/projects/${p._id}`}><h4>{p.title}</h4></Link>
                         <p>Status: {p.status}</p>
