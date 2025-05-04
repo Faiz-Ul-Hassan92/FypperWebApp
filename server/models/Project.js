@@ -13,7 +13,7 @@ const ProjectSchema = new mongoose.Schema({
   requiredSkills: [String], // Skills needed for the project
   maxMembers: {
     type: Number,
-    default: 5, // Default max members
+    default: 3, // Default max members
   },
   owner: {
     // Student who created the project

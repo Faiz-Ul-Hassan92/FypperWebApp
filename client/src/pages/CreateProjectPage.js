@@ -8,7 +8,7 @@ function CreateProjectPage() {
         title: '',
         description: '',
         requiredSkills: '', // Comma-separated
-        maxMembers: 5, // Default value
+        maxMembers: 3, // Default value
     });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -30,7 +30,7 @@ function CreateProjectPage() {
             title,
             description,
             requiredSkills: requiredSkills.split(',').map(s => s.trim()).filter(s => s), // Convert to array
-            maxMembers: parseInt(maxMembers, 10) || 5 // Ensure it's a number
+            maxMembers: parseInt(maxMembers, 10) || 3 // Ensure it's a number
         };
 
         try {
@@ -69,7 +69,7 @@ function CreateProjectPage() {
                 </div>
                  <div>
                     <label htmlFor="maxMembers">Maximum Members:</label>
-                    <input type="number" id="maxMembers" name="maxMembers" value={maxMembers} onChange={onChange} min="1" required />
+                    <input type="number" id="maxMembers" name="maxMembers" value={maxMembers} onChange={onChange} min="1" max="3" required />
                 </div>
                 <button type="submit" disabled={loading}>
                     {loading ? 'Creating Project...' : 'Create Project'}

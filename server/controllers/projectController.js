@@ -15,11 +15,14 @@ exports.createProject = async (req, res, next) => {
       return res.status(400).json({ success: false, message: 'Please provide title and description' });
     }
 
+    // Cap maxMembers at 3
+    const cappedMaxMembers = maxMembers ? Math.min(parseInt(maxMembers, 10), 3) : 3;
+
     const project = await Project.create({
       title,
       description,
       requiredSkills,
-      maxMembers,
+      maxMembers: cappedMaxMembers,
       owner: ownerId,
       members: [ownerId] // Add owner as the first member
     });
