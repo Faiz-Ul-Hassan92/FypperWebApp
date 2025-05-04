@@ -57,7 +57,7 @@ exports.deleteSupervisorIdea = async (req, res, next) => {
             return res.status(403).json({ success: false, message: 'Not authorized to delete this idea' });
         }
 
-        await idea.remove();
+        await idea.deleteOne();
 
         res.status(200).json({ success: true, data: {} });
     } catch (error) {

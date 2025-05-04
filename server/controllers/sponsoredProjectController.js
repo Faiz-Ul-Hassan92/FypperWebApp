@@ -58,7 +58,7 @@ exports.deleteSponsoredProject = async (req, res, next) => {
             return res.status(403).json({ success: false, message: 'Not authorized to delete this project' });
         }
 
-        await project.remove();
+        await project.deleteOne();
 
         res.status(200).json({ success: true, data: {} });
     } catch (error) {
