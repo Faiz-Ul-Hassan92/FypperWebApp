@@ -1,0 +1,394 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa; /* Slightly lighter background */
+  color: #212529; /* Darker text */
+  font-size: 15px; /* Slightly smaller base font */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+    max-width: 1140px; /* Slightly narrower */
+    margin: 1rem auto; /* Reduced top/bottom margin */
+    padding: 0 1rem;
+}
+
+h1, h2, h3 {
+    color: #0056b3; 
+    margin-top: 0.5rem; /* Reduced top margin */
+    margin-bottom: 0.75rem; /* Reduced bottom margin */
+}
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff; /* Add border for boxy feel */
+    padding: 8px 12px; /* Reduced padding */
+    border-radius: 2px; /* Sharper corners */
+    cursor: pointer;
+    font-size: 0.95rem; /* Slightly smaller font */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    line-height: 1.4; /* Adjust line height */
+}
+
+button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    border-color: #cccccc;
+    cursor: not-allowed;
+}
+
+form {
+    background: white;
+    padding: 1.5rem; /* Reduced padding */
+    border-radius: 2px; /* Sharper corners */
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.08); */ /* Flatter shadow */
+    border: 1px solid #dee2e6; /* Use border instead of shadow */
+    margin-bottom: 1.5rem; /* Reduced margin */
+}
+
+form div {
+    margin-bottom: 0.8rem; /* Reduced margin */
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.3rem; /* Reduced margin */
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select,
+form input[type="number"] {
+    width: 100%;
+    padding: 8px 10px; /* Reduced padding */
+    border: 1px solid #ced4da; /* Standard border */
+    border-radius: 2px; /* Sharper corners */
+    box-sizing: border-box; 
+    font-size: 0.95rem;
+}
+
+textarea {
+    line-height: 1.4;
+}
+
+.error-message,
+.success-message {
+    border: 1px solid;
+    padding: 8px 12px; /* Reduced padding */
+    border-radius: 2px; /* Sharper corners */
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #0056b3;
+  padding: 0.75rem 1rem; 
+  color: white;
+  border-bottom: 2px solid #00418a; /* Add a subtle darker border */
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.8rem; 
+  align-items: center;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a,
+.navbar button.link-button {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: 1px solid transparent; /* Start with transparent border */
+  padding: 5px 8px; /* Add slight padding for hover effect */
+  border-radius: 2px; /* Boxy */
+  font: inherit;
+  cursor: pointer;
+  font-size: 0.95rem; 
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.navbar a:hover,
+.navbar button.link-button:hover {
+  /* text-decoration: underline; */ /* Remove underline hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+  border-color: rgba(255, 255, 255, 0.2); /* Subtle border on hover */
+  text-decoration: none;
+}
+
+.navbar .nav-right {
+    margin-left: auto; 
+    display: flex; 
+    align-items: center;
+    gap: 0.8rem; 
+}
+.navbar .nav-right span {
+    font-size: 0.9rem;
+    margin-right: 0.5rem; /* Add space before logout button */
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 2px; /* Sharper corners */
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.08); */ /* Flatter shadow */
+    border: 1px solid #dee2e6; /* Use border */
+    padding: 1rem; /* Reduced padding */
+    margin-bottom: 1rem; /* Reduced margin */
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.card p {
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+}
+
+/* Helper class for action sections on details pages */
+.action-section {
+    margin-top: 1rem; /* Reduced margin */
+    padding-top: 1rem; /* Reduced padding */
+    border-top: 1px solid #eee;
+}
+
+/* Dropdown Styles (adjusted padding/margins) */
+.dropdown-container {
+    position: relative;
+    display: flex; 
+    align-items: center;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dropdown-toggle::after {
+    content: ' ▼';
+    font-size: 0.7em;
+    margin-left: 4px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 2px; /* Sharper */
+    padding: 0.3rem 0; /* Reduced padding */
+    margin-top: 5px; /* Reduced space */
+    min-width: 180px; 
+    z-index: 1000; 
+    list-style: none; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: block; 
+    gap: 0;
+}
+
+.dropdown-menu li {
+    display: block; 
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.4rem 0.8rem; /* Reduced padding */
+    color: #333; 
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+.dropdown-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999; 
+    background: transparent; 
+}
+
+/* Chat specific adjustments */
+.chat-message-container {
+    /* Style for the scrollable chat area */
+    height: 350px; /* Adjusted height */
+    overflow-y: scroll; 
+    border: 1px solid #ced4da;
+    border-radius: 2px;
+    margin-bottom: 0.8rem; 
+    padding: 8px;
+    background-color: #f8f9fa;
+}
+
+.chat-message {
+     margin-bottom: 0.6rem; /* Reduced margin */
+}
+
+.chat-message strong {
+    font-size: 0.95rem;
+}
+
+.chat-message span {
+     font-size: 0.8rem; /* Smaller meta text */
+}
+
+.chat-message p {
+    margin: 0.2rem 0 0 0; /* Reduced message margin */
+    font-size: 0.95rem;
+    line-height: 1.3;
+    white-space: pre-wrap;
+}
+
+.chat-input-form {
+    display: flex;
+    gap: 0.5rem; /* Space between textarea and button */
+}
+
+.chat-input-form textarea {
+    flex-grow: 1;
+}
+
+/* HomePage specific styles */
+.home-container.card {
+    /* Overrides for card on home page if needed, e.g., more padding */
+    padding: 2rem;
+    text-align: center; /* Center align content */
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 1.5rem;
+}
+
+.home-divider {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin: 1.5rem 0;
+}
+
+.home-actions p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.action-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+/* Button styles for Links */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 8px 15px; /* Adjusted padding */
+    font-size: 1rem;
+    border-radius: 2px; /* Boxy */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-decoration: none; /* Remove underline from Link */
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #0052a9;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    color: #007bff;
+    background-color: transparent;
+    border-color: #007bff;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    text-decoration: none;
+}
+
+/* Smaller button variant */
+.btn-sm {
+    padding: 6px 10px; /* Further reduced padding */
+    font-size: 0.875rem; /* Smaller font */
+}
+
+/* Chat specific adjustments */
+/* ... */ 
